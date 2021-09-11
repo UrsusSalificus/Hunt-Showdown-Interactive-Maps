@@ -1,0 +1,41 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Bebas Neue', cursive;
+  background-color: #333
+}
+
+#bayouMap {
+  width: 803px;
+  height: 803px;
+  background: #111;
+}
+
+.navBar ul {
+  font-size: 30px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navBar li {
+  float: left;
+}
+
+.navBar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navBar li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.navBar .active {
+  background-color: #04AA6D;
+}

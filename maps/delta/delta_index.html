@@ -4,10 +4,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico"/>
-		<link rel="stylesheet" href="style.css"/>
+		<link rel="stylesheet" href="../../style.css"/>
 	  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 	  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-
+		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -16,13 +16,24 @@
 	<body>
 		<div class='navBar'>
 			<ul>
-				<li><a href="maps/bayou/bayou_index.html">Stillwater Bayou</a></li>
-				<li><a href="maps/delta/delta_index.html">Lawson Delta</a></li>
-				<li><a href="maps/desalle/desalle_index.html">DeSalle</a></li>
+				<li><a href="/maps/bayou/bayou_index.html">Stillwater Bayou</a></li>
+				<li><a class="active" href="/maps/delta/delta_index.html">Lawson Delta</a></li>
+				<li><a href="/maps/desalle/desalle_index.html">DeSalle</a></li>
 			</ul>
 		</div>
 
+		<div id='map'></div>
 
+		<script>
+			var map = L.map('map', {
+				crs: L.CRS.Simple
+			});
 
+			var bounds = [[0,0], [1000,1000]];
+			var image = L.imageOverlay('Bayou_map.png', bounds).addTo(map);
+
+			map.fitBounds(bounds);
+
+		</script>
 	</body>
 </html>
