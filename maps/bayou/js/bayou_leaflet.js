@@ -5,7 +5,22 @@ var bounds = [[0,0], [100,100]];
 var image = L.imageOverlay(mapImageLocation, bounds).addTo(map);
 
 // markers
-var spreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1hbHqrnYa4oMUquZcq8WkTJk0kI0t9scGBwro-EH-ALA/edit#gid=0';
+// ref: http://stackoverflow.com/a/1293163/2343
+// This will parse a delimited string into an array of
+// arrays. The default delimiter is the comma, but this
+// can be overriden in the second argument.
+function startSeriesRetrieval(file) {
+  // sent a GET request to retrieve the CSV file contents
+  $.get(file, function( CSVdata) {
+     // CSVdata is populated with the file contents
+     // ready to be converted into an Array
+      data = $.csv.toArray(CSVdata);
+      console.log(data)
+  });
+};
+
+console.log(startSeriesRetrieval("bayou_markers.csv"))
+
 var sol = L.latLng([ 5, 10]);
 L.marker(sol).addTo(map)
 
