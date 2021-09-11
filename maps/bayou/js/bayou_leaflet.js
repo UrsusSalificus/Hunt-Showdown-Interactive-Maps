@@ -15,6 +15,7 @@ function startSeriesRetrieval(file) {
      // CSVdata is populated with the file contents
      // ready to be converted into an Array
       data = $.csv.toArray(CSVdata);
+      return data
   });
 };
 
