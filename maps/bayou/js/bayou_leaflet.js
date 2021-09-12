@@ -41,17 +41,14 @@ function assignIcon(iconType) {
 
 
 // Importing marker file
-var response = await fetch(markersFile);
-var data = await response.text();
-var CSVData = data.split(/\r?\n/)
 // Test data
 //var CSVData = ['type,leftCoord,rightCoord,icon,screenshot', 'poster,83.5,20,inside,alain_1.jpg', 'poster,81,15.2,inside,alain_2.jpg','poster,82.5,17.3,outside,alain_3.jpg', '']
 
 // We will parse every line of the markers file, skipping first (headers)
 // and last entry (empty)
-function addingMarkersToMap(CSVData, screenshotsLocation, map) {
-  for (var i = 1; i < (CSVData.length -1); i++) {
-    var markerData = CSVData[i].split(',')
+function addingMarkersToMap(markersData, screenshotsLocation, map) {
+  for (var i = 1; i < (markersData.length -1); i++) {
+    var markerData = markersData[i].split(',')
 
     // Variables needed to add a marker
     var markerType = markerData[0]
@@ -76,9 +73,22 @@ function addingMarkersToMap(CSVData, screenshotsLocation, map) {
   }
 }
 
-addingMarkersToMap(CSVData, screenshotsLocation, map)
+// Fetching the data for the markers, then add it to the map
+async function main(markersFile, screenshotsLocation, map) {
+  var data;
+  var response = await fetch(markersFile);
+  var markersText = await response.text();
+  var markersData = markersText.split(/\r?\n/)
+  addingMarkersToMap(markersData, screenshotsLocation, map)
+}
 
-// Function to input in console when on the page to display
+main(markersFile, screenshotsLocation, map);
+
+// Launching map
+map.fitBounds(bounds);
+
+
+// NOT USED : to add grid to map (used to pinpoint marker location)
 function addGridToPinpointMarker (){
   var allLeftPoints = Array.from({length: 99}, (_, i) => i + 1)
   var allRightPoints = allLeftPoints.reverse()
@@ -110,6 +120,3 @@ function addGridToPinpointMarker (){
      .addTo(map);
   }
 }
-
-// Launching map ?
-map.fitBounds(bounds);
