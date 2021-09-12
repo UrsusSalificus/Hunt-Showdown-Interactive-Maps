@@ -11,6 +11,19 @@ html, body {
   background: #111;
 }
 
+.leaflet-popup-content-wrapper{
+    width: 340px;
+    background-color: #444;
+}
+
+.leaflet-popup-tip {
+    opacity: 0;
+}
+
+.popupImage {
+    max-width: 300px;
+}
+
 .navBar ul {
   font-size: 30px;
   list-style-type: none;
