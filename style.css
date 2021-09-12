@@ -12,7 +12,7 @@ html, body {
 }
 
 .leaflet-popup-content-wrapper{
-    width: 340px;
+    width: 440px;
     background-color: #444;
 }
 
@@ -21,7 +21,7 @@ html, body {
 }
 
 .popupImage {
-    max-width: 300px;
+    max-width: 400px;
 }
 
 .navBar ul {

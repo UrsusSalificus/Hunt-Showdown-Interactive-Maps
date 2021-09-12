@@ -41,8 +41,9 @@ function assignIcon(iconType) {
 
 
 // Importing marker file
-var CSVFile = $.get(markersFile)
-var CSVData = CSVFile["responseText"].split(/\r?\n/)
+var response = await fetch(markersFile);
+var data = await response.text();
+var CSVData = data.split(/\r?\n/)
 // Test data
 //var CSVData = ['type,leftCoord,rightCoord,icon,screenshot', 'poster,83.5,20,inside,alain_1.jpg', 'poster,81,15.2,inside,alain_2.jpg','poster,82.5,17.3,outside,alain_3.jpg', '']
 
