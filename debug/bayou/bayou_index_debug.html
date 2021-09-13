@@ -11,34 +11,35 @@
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <script src="../../jquery-3.6.0.min.js"></script>
+		<style>
+			html, body {
+				height: 100%;
+				margin: 0;
+				font-family: 'Bebas Neue', cursive;
+				background-color: #333
+			}
 
-		<link rel="stylesheet" href="../../style.css"/>
+			#mapDiv {
+			  width: 803px;
+			  height: 803px;
+			  background: #111;
+			}
+		</style>
   </head>
 
 	<body>
-		<div class='navBar'>
-			<ul>
-				<li><a class="active" href="../bayou/bayou_index.html">Stillwater Bayou</a></li>
-				<li><a href="../delta/delta_index.html">Lawson Delta</a></li>
-				<li><a href="../desalle/desalle_index.html">DeSalle</a></li>
-			</ul>
-		</div>
-
 		<div id='mapDiv'></div>
 
     <script type="text/javascript" src="../../js/mapProcessing.js"></script>
+		<script type="text/javascript" src="../../js/mapDebug.js"></script>
 		<script>
 			// LOCATIONS //
-			var mapImageLocation = "images/bayou_map.png"
+			var mapImageLocation = "../../maps/bayou/images/bayou_map.png"
 			var iconsLocation =  "../../icons/"
-			var markersFile = "bayou_markers.csv"
 
 			// Launching map
 			var map = mapInitilisation()
 			addMarkerOnClick(map)
-
-			// Fetching the data for the markers, then add it to the map
-			main(markersFile, screenshotsLocation, map);
 		</script>
 
 	</body>
