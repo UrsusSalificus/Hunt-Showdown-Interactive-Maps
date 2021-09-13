@@ -43,7 +43,7 @@ function assignIcon(iconsLocation, iconType) {
 // Importing marker file
 // We will parse every line of the markers file, skipping first (headers)
 // and last entry (empty)
-function addingMarkersToMap(markersData, screenshotsLocation, map) {
+function addingMarkersToMap(markersData, iconsLocation, screenshotsLocation, map) {
   for (var i = 1; i < (markersData.length -1); i++) {
     var markerData = markersData[i].split(',')
 
@@ -54,7 +54,7 @@ function addingMarkersToMap(markersData, screenshotsLocation, map) {
     var iconType = markerData[3]
     var screenshot = markerData[4]
 
-    var icon = assignIcon(iconType)
+    var icon = assignIcon(iconsLocation, iconType)
     // Adding the marker
     var coords = L.latLng([ leftCoord, rightCoord])
     L.marker(coords, {icon: icon})
@@ -71,10 +71,10 @@ function addingMarkersToMap(markersData, screenshotsLocation, map) {
 }
 
 // Fetching the data for the markers, then add it to the map
-async function main(markersFile, screenshotsLocation, map) {
+async function main(markersFile, iconsLocation, screenshotsLocation, map) {
   var data;
   var response = await fetch(markersFile);
   var markersText = await response.text();
   var markersData = markersText.split(/\r?\n/)
-  addingMarkersToMap(markersData, screenshotsLocation, map)
+  addingMarkersToMap(markersData, iconsLocation, screenshotsLocation, map)
 }

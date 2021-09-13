@@ -30,12 +30,12 @@
 		<script>
 			// LOCATIONS //
 			var mapImageLocation = "images/bayou_map.png"
+			var screenshotsLocation = "images/screenshots/"
 			var iconsLocation =  "../../icons/"
 			var markersFile = "bayou_markers.csv"
 
 			// Launching map
 			var map = mapInitilisation()
-			addMarkerOnClick(map)
 
 			// Fetching the data for the markers, then add it to the map
 			main(markersFile, screenshotsLocation, map);
