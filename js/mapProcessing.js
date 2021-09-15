@@ -39,36 +39,30 @@ function assignIcon(iconsLocation, iconType) {
   } else return undergroundIcon
 }
 
+// To add a marker on the map
+function addingMarkerToMap(markerData, iconsLocation, screenshotsLocation, map) {
+  // Variables needed to add a marker
+  var markerType = markerData[0]
+  var leftCoord = markerData[1]
+  var rightCoord = markerData[2]
+  var iconType = markerData[3]
+  var screenshot = markerData[4]
 
-// Importing marker file
-// We will parse every line of the markers file, skipping first (headers)
-// and last entry (empty)
-function addingMarkersToMap(markersData, iconsLocation, screenshotsLocation, map) {
-  for (var i = 1; i < (markersData.length -1); i++) {
-    var markerData = markersData[i].split(',')
-
-    // Variables needed to add a marker
-    var markerType = markerData[0]
-    var leftCoord = markerData[1]
-    var rightCoord = markerData[2]
-    var iconType = markerData[3]
-    var screenshot = markerData[4]
-
-    var icon = assignIcon(iconsLocation, iconType)
-    // Adding the marker
-    var coords = L.latLng([ leftCoord, rightCoord])
-    L.marker(coords, {icon: icon})
-      .bindPopup("<img src=" + "'" + screenshotsLocation + screenshot + "'" + " class=popupImage>")
-      .on('mouseover', function (e) {
-         var popup = e.target.getPopup();
-         popup.setLatLng(e.latlng).openOn(map);
-       })
-       .on('mouseout', function(){
-         this.closePopup();
-       })
-      .addTo(map);
-  }
+  var icon = assignIcon(iconsLocation, iconType)
+  // Adding the marker
+  var coords = L.latLng([ leftCoord, rightCoord])
+  L.marker(coords, {icon: icon})
+    .bindPopup("<img src=" + "'" + screenshotsLocation + screenshot + "'" + " class=popupImage>")
+    .on('mouseover', function (e) {
+       var popup = e.target.getPopup();
+       popup.setLatLng(e.latlng).openOn(map);
+     })
+     .on('mouseout', function(){
+       this.closePopup();
+     })
+    .addTo(map);
 }
+
 
 // Fetching the data for the markers, then add it to the map
 async function main(markersFile, iconsLocation, screenshotsLocation, map) {
@@ -76,5 +70,11 @@ async function main(markersFile, iconsLocation, screenshotsLocation, map) {
   var response = await fetch(markersFile);
   var markersText = await response.text();
   var markersData = markersText.split(/\r?\n/)
-  addingMarkersToMap(markersData, iconsLocation, screenshotsLocation, map)
+
+  // We will parse every line of the markers file, skipping first (headers)
+  // and last entry (empty)
+  for (var i = 1; i < (markersData.length -1); i++) {
+    var markerData = markersData[i].split(',')
+    addingMarkerToMap(markerData, iconsLocation, screenshotsLocation, map)
+  }
 }
