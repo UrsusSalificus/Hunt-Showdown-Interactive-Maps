@@ -48,7 +48,7 @@ function addMarkerOnClick(map) {
     // Only 1 digit
     latlng['lat'] = Number(latlng['lat'].toFixed(1))
     latlng['lng'] = Number(latlng['lng'].toFixed(1))
-    fallbackCopyTextToClipboard(String(latlng))
+    fallbackCopyTextToClipboard(String(latlng['lat'] + ";" + latlng['lng']))
     popup
         .setLatLng(latlng)
         .setContent("You clicked the map at " + latlng.toString())
