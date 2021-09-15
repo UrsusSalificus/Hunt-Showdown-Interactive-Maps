@@ -1,5 +1,5 @@
 // Test data
-var markerInline = 'poster,61.5,70.6,inside,arden_1.jpg'
+var markerInline = 'poster,61.5;70.6,inside,arden_1.jpg'
 var markerData = markerInline.split(',')
 //addingMarkerToMap(markerData, iconsLocation, screenshotsLocation, map)
 

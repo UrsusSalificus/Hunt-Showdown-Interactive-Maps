@@ -43,14 +43,15 @@ function assignIcon(iconsLocation, iconType) {
 function addingMarkerToMap(markerData, iconsLocation, screenshotsLocation, map) {
   // Variables needed to add a marker
   var markerType = markerData[0]
-  var leftCoord = markerData[1]
-  var rightCoord = markerData[2]
-  var iconType = markerData[3]
-  var screenshot = markerData[4]
+  var markerLatlng = markerData[1]
+  var iconType = markerData[2]
+  var screenshot = markerData[3]
 
   var icon = assignIcon(iconsLocation, iconType)
+  var markerLat = Number(markerLatlng.split(';')[0])
+  var markerLng = Number(markerLatlng.split(';')[1])
   // Adding the marker
-  var coords = L.latLng([ leftCoord, rightCoord])
+  var coords = L.latLng([ markerLat, markerLng])
   L.marker(coords, {icon: icon})
     .bindPopup("<img src=" + "'" + screenshotsLocation + screenshot + "'" + " class=popupImage>")
     .on('mouseover', function (e) {
