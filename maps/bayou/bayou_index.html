@@ -34,7 +34,11 @@
 			var iconsLocation =  "../../icons/"
 			var markersFile = "bayou_markers.csv"
 
-				main(markersFile, screenshotsLocation, map);
+			// Launching map
+			var map = mapInitilisation()
+
+			// Fetching the data for the markers, then add it to the map
+			main(markersFile, iconsLocation, screenshotsLocation, map);
 		</script>
 
 	</body>
