@@ -3,14 +3,16 @@
 		<title>Hunt Showdown Interactive Map</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico"/>
-		<link rel="stylesheet" href="../../style.css"/>
 	  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 	  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+		<script src="../../jquery-3.6.0.min.js"></script>
+
+		<link rel="stylesheet" href="../../style.css"/>
 	</head>
 
 	<body>
@@ -22,18 +24,32 @@
 			</ul>
 		</div>
 
-		<div id='map'></div>
+		<div id='mapDiv'></div>
 
+		<style>
+			.leaflet-popup-tip-container {
+				display: none;
+			}
+		</style>
+
+		<script type="text/javascript" src="../../js/mapProcessing.js"></script>
 		<script>
-			var map = L.map('map', {
-				crs: L.CRS.Simple
-			});
+			// LOCATIONS //
+			var mapImageLocation = "images/desalle_map.png"
+			var screenshotsLocation = "images/screenshots/"
+			var iconsLocation =  "../../icons/"
+			var markersFile = "desalle_markers.csv"
 
-			var bounds = [[0,0], [1000,1000]];
-			var image = L.imageOverlay('Bayou_map.png', bounds).addTo(map);
+			// Launching map
+			var map = mapInitilisation()
 
-			map.fitBounds(bounds);
+			// WORK IN PROGRESS
+			var marker = new L.marker([47, 73], { opacity: 0 }); //opacity may be set to zero
+			marker.bindTooltip("<div style='color:red; background:white; font-size:30px;'>WORK IN PROGRESS</div>", {permanent: true, offset: [0, 0] });
+			marker.addTo(map);
 
+			// Fetching the data for the markers, then add it to the map
+			//main(markersFile, screenshotsLocation, map);
 		</script>
 	</body>
 </html>
