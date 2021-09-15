@@ -72,6 +72,9 @@ async function main(markersFile, iconsLocation, screenshotsLocation, map) {
   var markersText = await response.text();
   var markersData = markersText.split(/\r?\n/)
 
+  // Launching map
+  var map = mapInitilisation()
+
   // We will parse every line of the markers file, skipping first (headers)
   // and last entry (empty)
   for (var i = 1; i < (markersData.length -1); i++) {
