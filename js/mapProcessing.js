@@ -79,3 +79,4 @@ async function main(markersFile, iconsLocation, screenshotsLocation, map) {
     addingMarkerToMap(markerData, iconsLocation, screenshotsLocation, map)
   }
 }
+
