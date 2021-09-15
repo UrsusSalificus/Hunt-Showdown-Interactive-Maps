@@ -5,11 +5,6 @@ html, body {
   background-color: #333
 }
 
-.chooseMap {
-  height: 100;
-  padding: 0 30px;
-}
-
 #mapDiv {
   width: 803px;
   height: 803px;
