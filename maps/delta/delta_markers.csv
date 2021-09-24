@@ -13,6 +13,7 @@ poster,85.8;36.4,outside,blanc_9.jpg
 poster,84;32.5,inside,blanc_10.jpg
 poster,85.8;31.8,inside,blanc_11.jpg
 poster,88.7;32.8,inside,blanc_12.jpg
+poster,87.1;33.4,inside,blanc_13.png
 poster,21.9;49.4,outside,brickworks_1.jpg
 poster,13.6;37.8,inside,brickworks_2.png
 poster,19.9;48.7,outside,brickworks_3.jpg
@@ -31,6 +32,7 @@ poster,81.7;63,inside,golden_1.png
 poster,81.3;63.3,inside,golden_2.jpg
 poster,91.3;57,inside,golden_3.jpg
 poster,83.5;61.6,outside,golden_4.jpg
+poster,83.9;61.8,outside,golden_5.png
 poster,18.6;85.6,inside,hide_1.jpg
 poster,17.9;86.7,inside,hide_2.jpg
 poster,20.4;85.1,inside,hide_3.jpg
@@ -41,6 +43,7 @@ poster,36.8;13.6,inside,iron_2.jpg
 poster,38.4;17.7,outside,iron_3.jpg
 poster,40.6;1.3,outside,iron_4.jpg
 poster,39.4;17,inside,iron_5.jpg
+poster,32.4;12.7,inside,iron_6.png
 poster,71.3;46.4,outside,lawson_1.jpg
 poster,62;40.7,inside,lawson_2.png
 poster,66.6;54.3,outside,lawson_3.jpg
@@ -59,12 +62,15 @@ poster,79.4;85.8,inside,salter_2.jpg
 poster,80.9;79.7,outside,salter_3.jpg
 poster,82.3;83.5,inside,salter_4.jpg
 poster,90.2;84.6,outside,salter_5.jpg
+poster,79;85,inside,salter_6.png
+poster,79.8;82.6,inside,salter_7.png
 poster,36.5;66.1,inside,nicholls_1.jpg
 poster,31.9;83.1,inside,nicholls_2.jpg
 poster,40.9;74.1,inside,nicholls_3.jpg
 poster,31.6;73,inside,nicholls_4.jpg
 poster,37.1;72.4,inside,nicholls_5.jpg
 poster,37.5;68.9,inside,nicholls_6.jpg
+poster,30.1;66.7,inside,nicholls_7.jpg
 poster,43.6;89.6,inside,windy_1.jpg
 poster,31.8;90.6,inside,windy_2.jpg
 poster,40;89.7,outside,windy_3.jpg
