@@ -55,8 +55,6 @@ function assignIcon(markerType, iconInfo, iconsLocation, comparativeValue) {
       return insideIcon
     } else return undergroundIcon
   } else if (markerType == 'spawn'){
-    console.log(iconInfo)
-    console.log(comparativeValue)
     var spawnValue = iconInfo
     var spawnColor = getColor(comparativeValue)
     var spawnHtmlStyle = `
