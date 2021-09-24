@@ -123,7 +123,7 @@ function addingSpawnsToMap(spawnData, highestValue, map) {
 // Fetching the data for the markers, then add it to the map
 async function fetchingAndAddingMarkers(markersFile, iconsLocation, screenshotsLocation, map) {
   // MAP MARKERS
-  var markerData = parsingCSV(markersFile)
+  var markersData = await parsingCSV(markersFile)
 
   // We will parse every line of the markers file, skipping first (headers)
   // and last entry (empty)
@@ -136,7 +136,7 @@ async function fetchingAndAddingMarkers(markersFile, iconsLocation, screenshotsL
 // Fetching the data for the spawn locations, then add it to the map
 async function fetchingAndAddingSpawns(spawnsFile, map) {
   // MAP MARKERS
-  var spawnsData = parsingCSV(spawnsFile)
+  var spawnsData = await parsingCSV(spawnsFile)
 
   // We first need to find what is the highest value
   var highestValue = 0
