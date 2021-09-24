@@ -6,47 +6,42 @@
 	  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 	  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-		<script src="../../jquery-3.6.0.min.js"></script>
-
-		<link rel="stylesheet" href="../../style.css"/>
-	</head>
-
-	<body>
-		<div class='navBar'>
-			<ul>
-				<li><a href="../bayou/bayou_index.html">Stillwater Bayou</a></li>
-				<li><a href="../delta/delta_index.html">Lawson Delta</a></li>
-				<li><a class="active" href="../desalle/desalle_index.html">DeSalle</a></li>
-			</ul>
-		</div>
-
-		<div id='mapDiv'></div>
-
+    <script src="../../jquery-3.6.0.min.js"></script>
 		<style>
-			.leaflet-popup-tip-container {
-				display: none;
+			html, body {
+				height: 100%;
+				margin: 0;
+				font-family: 'Bebas Neue', cursive;
+				background-color: #333
+			}
+
+			#mapDiv {
+			  width: 803px;
+			  height: 803px;
+			  background: #111;
 			}
 		</style>
+  </head>
+
+	<body>
+		<div id='mapDiv'></div>
 
 		<script type="text/javascript" src="../../js/mapProcessing.js"></script>
+		<script type="text/javascript" src="../../js/mapDebug.js"></script>
 		<script>
 			// LOCATIONS //
-			var mapImageLocation = "images/desalle_map.png"
-			var screenshotsLocation = "images/screenshots/"
+			var mapImageLocation = "../../maps/desalle/images/desalle_map.png"
 			var iconsLocation =  "../../icons/"
-			var markersFile = "desalle_markers.csv"
-			var spawnsFile = "desalle_spawns.csv"
+			var screenshotsLocation = "../../maps/desalle/images/screenshots/"
 
 			// Launching map
 			var map = mapInitilisation()
-
-			// Fetching the data for the markers, then add it to the map
-			fetchingAndAddingMarkers(markersFile, iconsLocation, screenshotsLocation, map);
-			fetchingAndAddingSpawns(spawnsFile, map);
+			addMarkerOnClick(map)
 		</script>
+
 	</body>
 </html>
