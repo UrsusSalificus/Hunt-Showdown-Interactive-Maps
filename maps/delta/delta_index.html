@@ -33,12 +33,14 @@
 			var screenshotsLocation = "images/screenshots/"
 			var iconsLocation =  "../../icons/"
 			var markersFile = "delta_markers.csv"
+			var spawnsFile = "delta_spawns.csv"
 
 			// Launching map
 			var map = mapInitilisation()
 
 			// Fetching the data for the markers, then add it to the map
-			main(markersFile, iconsLocation, screenshotsLocation, map);
+			fetchingAndAddingMarkers(markersFile, iconsLocation, screenshotsLocation, map);
+			fetchingAndAddingSpawns(spawnsFile, map);
 		</script>
 
 	</body>
