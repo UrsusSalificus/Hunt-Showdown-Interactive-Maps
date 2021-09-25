@@ -3,9 +3,9 @@ Hey all, click the image below to view the interactive maps of the game Hunt: Sh
 
 [<img src="https://github.com/UrsusSalificus/Hunt-Showdown-Interactive-Maps/blob/main/images/site_preview.PNG?raw=true">](https://ursussalificus.github.io/Hunt-Showdown-Interactive-Maps/)
 
-Please, visit the wiki for the why, FAQ and how to participate!
+Please, visit the [wiki](https://github.com/UrsusSalificus/Hunt-Showdown-Interactive-Maps/wiki) for the FAQ and how to participate.
 
-Happy hunting
+Happy hunting!
 
 ## References
 - Posters: https://steamcommunity.com/sharedfiles/filedetails/?id=2426679802
