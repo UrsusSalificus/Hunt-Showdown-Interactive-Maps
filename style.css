@@ -9,6 +9,12 @@ html, body {
   width: 803px;
   height: 803px;
   background: #111;
+  display: inline-block;
+}
+
+#donateDiv {
+  display: inline-block;
+  vertical-align: top;
 }
 
 .leaflet-popup-content-wrapper{
