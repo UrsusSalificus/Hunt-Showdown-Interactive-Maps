@@ -1,7 +1,7 @@
 # Hunt: Showdown Interactive Posters Maps
-Hey all, you can find below the maps of the game Hunt: Showdown, with the confirmed poster locations and spawn locations frequencies (WIP).
- 
-https://ursussalificus.github.io/Hunt-Showdown-Interactive-Maps/
+Hey all, click the image below to view the interactive maps of the game Hunt: Showdown, with the confirmed poster locations and spawn locations frequencies (WIP).
+
+[<img src="https://github.com/UrsusSalificus/Hunt-Showdown-Interactive-Maps/blob/main/images/site_preview.PNG?raw=true">](https://ursussalificus.github.io/Hunt-Showdown-Interactive-Maps/)
 
 Please, visit the wiki for the why, FAQ and how to participate!
 
