@@ -6,10 +6,6 @@
 	  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 	  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
     <script src="../../jquery-3.6.0.min.js"></script>
 
 		<link rel="stylesheet" href="../../style.css"/>
@@ -23,34 +19,35 @@
 				<li><a href="../desalle/desalle_index.html">DeSalle</a></li>
 			</ul>
 		</div>
+		<div id='wrapper'></div>
+			<div id='mapDiv'></div>
 
-		<div id='mapDiv'></div>
+	    <script type="text/javascript" src="../../js/mapProcessing.js"></script>
+			<script>
+				// LOCATIONS //
+				var mapImageLocation = "images/bayou_map.png"
+				var screenshotsLocation = "images/screenshots/"
+				var iconsLocation =  "../../icons/"
+				var markersFile = "bayou_markers.csv"
+				var spawnsFile = "bayou_spawns.csv"
 
-    <script type="text/javascript" src="../../js/mapProcessing.js"></script>
-		<script>
-			// LOCATIONS //
-			var mapImageLocation = "images/bayou_map.png"
-			var screenshotsLocation = "images/screenshots/"
-			var iconsLocation =  "../../icons/"
-			var markersFile = "bayou_markers.csv"
-			var spawnsFile = "bayou_spawns.csv"
+				// Launching map
+				var map = mapInitilisation()
 
-			// Launching map
-			var map = mapInitilisation()
+				// Fetching the data for the markers, then add it to the map
+				fetchingAndAddingMarkers(markersFile, iconsLocation, screenshotsLocation, map);
+				fetchingAndAddingSpawns(spawnsFile, map);
+			</script>
 
-			// Fetching the data for the markers, then add it to the map
-			fetchingAndAddingMarkers(markersFile, iconsLocation, screenshotsLocation, map);
-			fetchingAndAddingSpawns(spawnsFile, map);
-		</script>
-
-		<div id='donateDiv' style="display: inline-block; vertical-align: top">
-			<form action="https://www.paypal.com/donate" method="post" target="_blank">
-				<input type="hidden" name="business" value="4QBYFUUWUCM44" />
-				<input type="hidden" name="no_recurring" value="1" />
-				<input type="hidden" name="item_name" value="Add a Bounty for those Posters! Thanks for keeping the hunt running!" />
-				<input type="hidden" name="currency_code" value="CHF" />
-				<input type="image" src="../../icons/bounty.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" style="width:200px; padding: 20px"/>
-			</form>
+			<div id='donateDiv'>
+				<form action="https://www.paypal.com/donate" method="post" target="_blank">
+					<input type="hidden" name="business" value="4QBYFUUWUCM44" />
+					<input type="hidden" name="no_recurring" value="1" />
+					<input type="hidden" name="item_name" value="Add a Bounty for those Posters! Thanks for keeping the hunt running!" />
+					<input type="hidden" name="currency_code" value="CHF" />
+					<input type="image" src="../../icons/bounty.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" style="width:200px; padding: 20px"/>
+				</form>
+			</div>
 		</div>
 	</body>
 </html>

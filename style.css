@@ -1,36 +1,46 @@
+@font-face { font-family: Bandito; src: url('fonts/BANDITO_PERSONAL_USE.ttf'); }
+
 html, body {
   height: 100%;
   margin: 0;
-  font-family: 'Bebas Neue', cursive;
+  font-family: Bandito;
   background-color: #333
+}
+
+#wrapper {
+    overflow: hidden;
 }
 
 #mapDiv {
   width: 803px;
   height: 803px;
   background: #111;
-  display: inline-block;
+  float:left;
 }
 
 #donateDiv {
-  display: inline-block;
+  overflow: hidden;
   vertical-align: top;
 }
 
+/* Leaflet related styles*/
 .leaflet-popup-content-wrapper{
     width: 440px;
     background-color: #444;
     color:#fff;
 }
 
+/* Remove leaflet popup tip*/
 .leaflet-popup-tip {
     opacity: 0;
 }
 
+/* Restrict popup images*/
 .popupImage {
     max-width: 400px;
 }
 
+/* Navigation bar*/
 .navBar ul {
   font-size: 30px;
   list-style-type: none;
@@ -48,8 +58,10 @@ html, body {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 27px;
   text-decoration: none;
+  transition: background-color .4s;
+  background-color: #333;
 }
 
 .navBar li a:hover:not(.active) {
@@ -59,4 +71,3 @@ html, body {
 .navBar .active {
   background-color: #781212;
 }
-
